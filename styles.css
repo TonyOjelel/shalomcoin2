@@ -1,0 +1,1442 @@
+/* font-family: "Baloo Chettan 2", cursive;
+font-family: "Poppins", sans-serif; */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    scroll-behavior: smooth;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1.5;
+    background: var(--background-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
+    width: 100vw;
+    min-height: 100vh;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Baloo Chettan 2", cursive;
+  }
+  
+  a {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: "";
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  :root {
+    /* General  */
+    --background-color: linear-gradient(90deg, #333693 0%, #280e57 100%);
+    --white: rgba(255, 255, 255, 1);
+    --pinkish-red: #ff3b6b;
+  
+    /* Header section */
+    --header-footer-container-height: 10vh;
+    --header-background-color: radial-gradient(
+      circle at left center,
+      #8b36eb 0%,
+      #00186f 100%
+    );
+    
+    body, #header {
+      overflow-x: hidden;
+    }
+  
+    /* Tokenomics section */
+    --left-cards-background-color: radial-gradient(
+      circle at right bottom,
+      #4768fc 0%,
+      #fc61ab 100%
+    );
+    --right-card-background-color: radial-gradient(
+      circle at right bottom,
+      #4768fc 0%,
+      #fc61ab 100%
+    );
+  
+    /* Roadmap Section */
+    --left-phases-card-background-color: radial-gradient(
+      circle at right top,
+      #4768fc 0%,
+      #fc61ab 100%
+    );
+  
+    /* Contact Us section */
+    /* --contact-us-form-color: radial-gradient(
+      circle at left bottom,
+      rgba(255, 255, 255, 0) 20%,
+      rgba(65, 180, 230, 0.7) 80%,
+      #41b4e6 100%
+    ); */
+    --contact-us-form-color: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 20%,
+      rgba(65, 180, 230, 0.7) 80%,
+      #41b4e6 100%
+    );
+  }
+  
+  .horizontal-padding {
+    padding: 0 3%;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  h2 {
+    font-size: 3em;
+    line-height: 1.2;
+  }
+  
+  /* Header + navbar related */
+  #header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    overflow: hidden;
+  }
+  
+  #nav-bar {
+    height: var(--header-footer-container-height);
+    width: 100%;
+    background: var(--header-background-color);
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+  }
+  
+  #nav-bar ul {
+    float: right;
+  }
+  
+  #nav-bar li {
+    display: inline-block;
+    line-height: var(--header-footer-container-height);
+  }
+  
+  #nav-bar a {
+    color: var(--white);
+    padding: 3.5vh 1em;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  #nav-bar a:hover {
+    background-color: var(--pinkish-red);
+    transition: 1s;
+  }
+  
+  #hamburger {
+    color: #c9c8c8;
+    font-size: 2.2em;
+    line-height: var(--header-footer-container-height);
+    display: block;
+    float: right;
+    transition-duration: 1s;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .hamburger-change {
+    transform: rotate(-90deg);
+    opacity: 0.2;
+  }
+  
+  /* Main Related */
+  .flex-container {
+    display: flex;
+  }
+  
+  .justify-space-between {
+    justify-content: space-between;
+  }
+  
+  /* About Us related */
+  #about-us {
+    min-height: 90vh;
+  }
+  
+  .texts-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1em;
+  }
+  
+  .video-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 1em;
+  }
+  
+  .texts-container h2 {
+    margin-bottom: 1em;
+  }
+  .text-highlight {
+    color: var(--pinkish-red);
+  }
+  
+  #video {
+    /* Custom youtube video heights 560x315 */
+    height: 50%;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px 0 black;
+  }
+  
+  /* How to buy related  */
+  #how-to-buy {
+    min-height: 90vh;
+  }
+  
+  #how-to-buy h2 {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  
+  #how-to-buy h3 {
+    font-size: 1.5em;
+  }
+  
+  #how-to-buy-info {
+    display: flex;
+  }
+  
+  .buy-texts {
+    max-height: 20vh;
+    margin-bottom: 3em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .buy-texts img {
+    width: 70%;
+    height: auto;
+  }
+  
+  .buy-img-containers {
+    width: 20%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .buy-text-width-mod {
+    width: 70%;
+  }
+  
+  #buy-texts-container {
+    width: 60%;
+  }
+  
+  #how-to-buy-img-container {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Tokenomics related */
+  #tokenomics {
+    min-height: 90vh;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .card-holder {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    margin-top: 5em;
+    position: relative;
+  }
+  
+  .card-holder-left {
+    align-items: center;
+    justify-content: start;
+  }
+  .card-holder-right {
+    align-items: center;
+    justify-content: end;
+  }
+  .tokenomics-card {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    transition: all 1s;
+    position: relative;
+  }
+  
+  .tokenomics-card h2 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    z-index: 2;
+  }
+  .tokenomics-card p {
+    font-size: 1.5em;
+    color: rgb(219, 219, 219);
+    z-index: 2;
+  }
+  
+  .left-card {
+    background: var(--left-cards-background-color);
+    border-radius: 0 20px 20px 0;
+    left: -100%;
+  }
+  .right-card {
+    background: var(--right-card-background-color);
+    border-radius: 20px 0 0 20px;
+    right: -100%;
+  }
+  
+  .tokenomics-card img {
+    width: 15%;
+    height: auto;
+    position: absolute;
+  }
+  
+  .paw-point-bottom-left {
+    top: 0;
+    right: 0;
+  }
+  .paw-point-top-right {
+    bottom: 0;
+    left: 0;
+  }
+  .paw-point-bottom-right {
+    top: 0;
+    left: 0;
+  }
+  .paw-point-top-left {
+    bottom: 0;
+    right: 0;
+  }
+  
+  .card-flow-in-from-left {
+    left: 0;
+  }
+  .card-flow-in-from-right {
+    right: 0;
+  }
+  
+  /* particles.js below */
+  canvas {
+    display: block;
+  }
+  #particles-js {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    background-color: #280e57;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1em 0;
+    margin-top: 10vh;
+    overflow: hidden;
+  }
+  
+  /* Partners related */
+  .partners-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+  }
+  .partner {
+    width: 25%;
+    height: auto;
+  }
+  
+  /* Roadmap Section */
+  #roadmap {
+    min-height: 90vh;
+    width: 100%;
+  }
+  
+  #roadmap > h2 {
+    margin: 10vh 0 20vh;
+    text-align: center;
+  }
+  
+  .roadmap-phases-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  #phase-1-3-container {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  
+  #phase-1-3-container > * {
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    position: relative;
+  }
+  #phase-2-4-container {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  
+  #phase-2-4-container > * {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    position: relative;
+  }
+  
+  .phases {
+    width: 50%;
+    height: 100%;
+    background: var(--left-phases-card-background-color);
+    border-radius: 20px;
+  }
+  
+  .phases h2 {
+    text-align: center;
+    margin: 10% 0;
+  }
+  
+  .phases ul {
+    padding: 0 15%;
+    margin-bottom: 2em;
+  }
+  
+  .phases li {
+    padding: 0.2em 0.5em;
+  }
+  
+  #roadmap-line-container {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  #roadmap-line {
+    border-top: 3px dashed white;
+    width: 75%;
+  }
+  
+  .vertical-lines {
+    position: absolute;
+    height: 48%;
+    border-left: 3px dashed white;
+  }
+  
+  .vertical-lines:nth-of-type(1) {
+    top: 0;
+    left: 12.5%;
+  }
+  .vertical-lines:nth-of-type(2) {
+    bottom: 0;
+    left: 37.5%;
+  }
+  .vertical-lines:nth-of-type(3) {
+    top: 0;
+    right: 37.5%;
+  }
+  .vertical-lines:nth-of-type(4) {
+    bottom: 0;
+    right: 12.5%;
+  }
+  
+  /* Contact us section */
+  #contact-us {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+    position: relative;
+  }
+  
+  #contact-us-p-and-logos {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  
+  #contact-us-p-holder {
+    position: relative;
+    height: 70%;
+    width: 80%;
+  }
+  
+  #contact-us-p-holder * {
+    text-align: left;
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  
+  #contact-us p::after {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    content: "";
+    width: 20%;
+    height: 0;
+    border-bottom: 5px solid white;
+  }
+  
+  #contact-us-logos-holder {
+    height: 15%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  #contact-form-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #form {
+    height: 90%;
+    width: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background: var(--contact-us-form-color);
+    border-radius: 20px;
+    padding: 5%;
+  }
+  .form-content-container {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  
+  ::placeholder {
+    color: #0a0a0a;
+  }
+  
+  .filling-input {
+    width: 70%;
+    height: 3em;
+    border-radius: 10px;
+    font-size: 1em;
+    border-width: 0;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 1)
+    );
+  }
+  .filling-input:focus {
+    transform-origin: left;
+    transform: scale(1.25);
+    transition-duration: 0.5s;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: none !important;
+  }
+  
+  #form label {
+    font-size: 2.5em;
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  .btn-grad {
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 0%,
+      #41b4e6 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  .btn-grad {
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 2px 2px 10px 0 #eee;
+    border-radius: 10px;
+    display: block;
+    border: none;
+  }
+  
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Footer section */
+  #footer {
+    height: var(--header-footer-container-height);
+    background: var(--header-background-color);
+    position: sticky;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(199, 199, 199);
+    text-shadow: 2px 2px rgb(70, 69, 69);
+  }
+  
+  @media only screen and (max-width: 1650px) {
+    /* Seems ok */
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    /* Navbar */
+    #hamburger {
+      display: block;
+      font-size: 4em;
+    }
+    #nav-bar ul {
+      position: fixed;
+      width: 100%;
+      height: 90vh;
+      background: var(--background-color);
+      top: 10vh;
+      left: 200%;
+      text-align: center;
+      transition: all 0.5s;
+      padding: 3em 0 0 0;
+      font-size: 2em;
+    }
+    #nav-bar ul li {
+      display: block;
+    }
+  
+    #nav-bar ul li a:hover {
+      background-color: transparent;
+      color: #ff3b6b;
+    }
+  
+    #nav-bar ul.appear {
+      left: 0;
+    }
+  
+    /* About Us */
+    #about-us {
+      height: 90vh;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 15%;
+    }
+  
+    .texts-container {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 0;
+    }
+  
+    .video-container {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      align-items: left;
+      justify-content: center;
+      padding: 0;
+    }
+  
+    #video {
+      /* Custom youtube video heights 560x315 */
+      height: 70%;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 10px 10px 20px 0 black;
+    }
+  
+    /* How to buy related  */
+    #how-to-buy {
+      min-height: 90vh;
+    }
+  
+    #how-to-buy h2 {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  
+    #how-to-buy h3 {
+      font-size: 1.5em;
+      line-height: 1.2;
+      margin-bottom: 0.3em;
+    }
+  
+    #how-to-buy-info {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .buy-texts {
+      max-height: 17vh;
+      margin-bottom: 5em;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 5%;
+    }
+  
+    .buy-texts img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .buy-img-containers {
+      width: 20%;
+      display: flex;
+      align-items: center;
+    }
+  
+    .buy-text-width-mod {
+      width: 70%;
+    }
+  
+    #buy-texts-container {
+      width: 100%;
+    }
+  
+    #how-to-buy-img-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .card-holder {
+      height: 60vh;
+      width: 100%;
+      display: flex;
+      margin-top: 5em;
+      position: relative;
+    }
+  
+    /* Partners related */
+    #particles-js {
+      position: relative;
+      width: 100%;
+      height: 30vh;
+      background-color: #280e57;
+      background-image: url("");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      margin-top: 10vh;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  
+    .partners-container {
+      width: 100%;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .partner {
+      height: 7vh;
+      width: 100%;
+      display: flex;
+      padding: 0 5%;
+    }
+  
+    .partner:nth-of-type(1) {
+      justify-content: start;
+    }
+    .partner:nth-of-type(2) {
+      justify-content: center;
+    }
+    .partner:nth-of-type(3) {
+      justify-content: end;
+    }
+  
+    /* Roadmap Section */
+    #roadmap {
+      height: 140vh;
+      width: 100%;
+    }
+  
+    #roadmap > h2 {
+      margin: 5vh 0 10vh;
+      text-align: center;
+    }
+  
+    .roadmap-phases-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      padding: 0 5%;
+      height: 75%;
+      position: relative;
+    }
+  
+    #phase-1-3-container {
+      height: 100%;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+  
+    #phase-1-3-container > * {
+      height: 50%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      position: relative;
+    }
+    #phase-2-4-container {
+      height: 100%;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+  
+    #phase-2-4-container > * {
+      height: 50%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      position: relative;
+    }
+  
+    .phases {
+      width: 100%;
+      height: 50%;
+      background: var(--left-phases-card-background-color);
+      border-radius: 20px;
+      padding: 0 10%;
+    }
+  
+    #phase-1-3-container .phases * {
+      text-align: right;
+    }
+    #phase-2-4-container .phases * {
+      text-align: left;
+    }
+  
+    .phases h2 {
+      text-align: center;
+      margin: 10% 0;
+    }
+  
+    .phases ul {
+      padding: 0;
+      margin-bottom: 20em;
+    }
+  
+    .phases li {
+      padding: 0.2em 0;
+    }
+  
+    #roadmap-line-container {
+      height: 100%;
+      width: 20%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+  
+    #roadmap-line {
+      border-right: 3px dashed white;
+      height: 75%;
+      width: 0;
+    }
+  
+    .vertical-lines {
+      position: absolute;
+      height: 0;
+      width: 48%;
+      border-top: 3px dashed white;
+    }
+  
+    .vertical-lines:nth-of-type(1) {
+      left: 0;
+      top: 12.5%;
+    }
+    .vertical-lines:nth-of-type(2) {
+      left: 50%;
+      top: 37.5%;
+    }
+    .vertical-lines:nth-of-type(3) {
+      left: 0;
+      top: 62.5%;
+    }
+    .vertical-lines:nth-of-type(4) {
+      left: 50%;
+      top: 87.5%;
+    }
+  
+    /* Contact us section */
+    #contact-us {
+      height: 140vh;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15%;
+      position: relative;
+    }
+  
+    #contact-us-p-and-logos {
+      height: 50%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  
+    #contact-us-p-holder {
+      position: relative;
+      height: 60%;
+      width: 100%;
+    }
+  
+    #contact-us-p-holder * {
+      text-align: left;
+      font-size: 2.2em;
+      font-weight: 700;
+    }
+  
+    #contact-us p::after {
+      position: absolute;
+      top: 65%;
+      left: 0;
+      content: "";
+      width: 20%;
+      height: 0;
+      border-bottom: 5px solid white;
+    }
+  
+    #contact-us-logos-holder {
+      height: 13%;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  
+    #contact-form-container {
+      height: 50%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #form {
+      height: 80%;
+      width: 80%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      background: var(--contact-us-form-color);
+      border-radius: 20px;
+      padding: 5%;
+    }
+    .form-content-container {
+      height: 30%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+  
+    .filling-input {
+      width: 80%;
+      height: 4em;
+      border-radius: 10px;
+      font-size: 1em;
+      border-width: 0;
+      box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 10%,
+        rgba(255, 255, 255, 1)
+      );
+    }
+    .filling-input:focus {
+      transform-origin: left;
+      transform: scale(1.25);
+      transition-duration: 0.5s;
+      background-color: rgba(255, 255, 255, 0.5);
+      outline: none !important;
+    }
+  
+    #form label {
+      font-size: 2.2em;
+      text-align: left;
+      font-weight: 500;
+    }
+  }
+  
+  @media only screen and (max-width: 992px) {
+    /* Seems ok */
+  }
+  
+  /* Small devices (large/landscape phones) */
+  @media only screen and (max-width: 768px) and (max-height: 768px) {
+    /* Seems ok */
+  }
+  
+  /* Smartphones in general */
+  @media only screen and (max-width: 550px) {
+    /* Navbar */
+    #hamburger {
+      font-size: 2em;
+    }
+    #nav-bar ul {
+      font-size: 1em;
+    }
+  
+    /* About Us */
+    #about-us {
+      min-height: 90vh;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 0 10%;
+    }
+  
+    .texts-container {
+      /* align-items: center; */
+      width: 100%;
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 0;
+    }
+  
+    .texts-container h2 {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+    }
+    .texts-container p {
+      font-size: 0.7em;
+    }
+  
+    .video-container {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      align-items: left;
+      justify-content: center;
+      padding: 0;
+    }
+  
+    #video {
+      /* Custom youtube video heights 560x315 */
+      height: 70%;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 10px 10px 20px 0 black;
+    }
+  
+    /* How to buy related  */
+    #how-to-buy {
+      min-height: 90vh;
+    }
+  
+    #how-to-buy h2 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  
+    #how-to-buy h3 {
+      font-size: 1.2em;
+      line-height: 1.2;
+      margin-bottom: 0.3em;
+    }
+  
+    #how-to-buy p {
+      font-size: 0.7em;
+    }
+  
+    #how-to-buy-info {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .buy-texts {
+      max-height: 25vh;
+      margin-bottom: 3em;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .buy-texts img {
+      width: 100%;
+      height: auto;
+    }
+    .buy-img-containers {
+      width: 20%;
+      display: flex;
+      align-items: center;
+    }
+  
+    .buy-text-width-mod {
+      width: 70%;
+    }
+  
+    #buy-texts-container {
+      width: 100%;
+    }
+  
+    #how-to-buy-img-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    /* Tokenomics related */
+    #tokenomics {
+      min-height: 90vh;
+      width: 100%;
+      overflow: hidden;
+    }
+    .card-holder {
+      height: 60vh;
+      width: 100%;
+      display: flex;
+      margin-top: 5em;
+      position: relative;
+    }
+  
+    .tokenomics-card {
+      height: 100%;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5%;
+      transition: all 1s;
+      position: relative;
+    }
+  
+    .tokenomics-card h2 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      z-index: 2;
+    }
+    .tokenomics-card p {
+      font-size: 1em;
+      color: rgb(219, 219, 219);
+      z-index: 2;
+    }
+  
+    .tokenomics-card img {
+      width: 25%;
+      height: auto;
+      position: absolute;
+    }
+  
+    /* Roadmap Section */
+    .phases h2 {
+      text-align: center;
+      margin: 7% 0;
+      font-size: 1.7em;
+    }
+    .phases li {
+      font-size: 0.6em;
+    }
+  
+    /* Contact us section */
+    #contact-us {
+      height: 140vh;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15%;
+      position: relative;
+    }
+  
+    #contact-us-p-and-logos {
+      height: 50%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  
+    #contact-us-p-holder {
+      position: relative;
+      height: 50%;
+      width: 100%;
+    }
+  
+    #contact-us-p-holder * {
+      text-align: left;
+      font-size: 1.3em;
+      font-weight: 700;
+    }
+  
+    #contact-us p::after {
+      position: absolute;
+      top: 90%;
+      left: 0;
+      content: "";
+      width: 20%;
+      height: 0;
+      border-bottom: 5px solid white;
+    }
+  
+    #contact-us-logos-holder {
+      height: 10%;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  
+    #contact-form-container {
+      height: 50%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #form {
+      height: 80%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      background: var(--contact-us-form-color);
+      border-radius: 20px;
+      padding: 5%;
+    }
+    .form-content-container {
+      height: 30%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+  
+    .filling-input {
+      width: 80%;
+      height: 3em;
+      border-radius: 10px;
+      font-size: 1em;
+      border-width: 0;
+      box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 10%,
+        rgba(255, 255, 255, 1)
+      );
+    }
+    .filling-input:focus {
+      transform-origin: left;
+      transform: scale(1.2);
+      transition-duration: 0.5s;
+      background-color: rgba(255, 255, 255, 0.5);
+      outline: none !important;
+    }
+  
+    #form label {
+      font-size: 1.8em;
+      text-align: left;
+      font-weight: 500;
+    }
+    /* Footer section */
+    #footer {
+      font-size: 0.8em;
+    }
+  }
+  
