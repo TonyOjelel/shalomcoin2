@@ -1,2 +1,2 @@
 # shalomcoin2.github.io-
-Digital currency1
+Digital currency2
