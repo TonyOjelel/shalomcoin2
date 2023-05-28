@@ -1,3 +1,3 @@
 # shalomcoin2.github.io-
 Digital currency
-4@1
+4@12
