@@ -1,4 +1,4 @@
 # shalomcoin2
 https://tonyojelel.github.io/shalomcoin2/
 Digital currency
-#6771231123
+#67712311234
