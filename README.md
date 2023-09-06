@@ -2,3 +2,4 @@
 https://tonyojelel.github.io/shalomcoin2/
 Digital currency
 #851234
+dw
