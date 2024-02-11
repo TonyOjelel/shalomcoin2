@@ -1,4 +1,4 @@
 # shalomcoin2
 https://tonyojelel.github.io/shalomcoin2/
 Digital currency
-#5734w
+#5734wp
